@@ -1,0 +1,13 @@
+<div class="item">
+    {{ currency }}
+    <span>
+    {{ rate | roundAndStringify }}
+        <ng-container *ngIf="difference > 0">
+            <mat-icon>arrow_drop_up</mat-icon>
+        </ng-container>
+        <ng-container *ngIf="difference < 0">
+            <mat-icon>arrow_drop_down</mat-icon>
+        </ng-container>
+    ({{ difference | roundAndStringify | signPrefix }})
+  </span>
+</div>

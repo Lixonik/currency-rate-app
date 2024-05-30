@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="header">
+        <div class="header-content">
+            <span class="currency-label">Currency {{ sourceCurrencyCode }}</span>
+            <span class="date-time">{{ currentDateTime | date: 'dd.MM.yyyy, HH:mm:ss' }}</span>
+        </div>
+        <button mat-icon-button class="show-more-button" (click)="toggleShowMore()" *ngIf="!errorMessage">
+            <ng-container *ngIf="showMore; else showMoreIcon">
+                <mat-icon>remove_circle_outline</mat-icon>
+            </ng-container>
+            <ng-template #showMoreIcon>
+                <mat-icon>add_circle_outline</mat-icon>
+            </ng-template>
+        </button>
+    </div>
+    <div class="content">
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        <ng-container *ngIf="!errorMessage">
+            <app-currency-rate-item
+                    *ngFor="let currency of visibleCurrencies"
+                    [currency]="currency"
+                    [rate]="rates[currency]"
+            ></app-currency-rate-item>
+        </ng-container>
+    </div>
+</div>

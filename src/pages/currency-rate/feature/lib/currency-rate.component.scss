@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+
+  & .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 15px;
+
+    & .header-content {
+      display: flex;
+      flex-direction: column;
+
+      & .currency-label {
+        font-weight: bold;
+        font-size: 14pt;
+      }
+
+      & .date-time {
+        font-size: 10pt;
+        color: gray;
+      }
+    }
+
+    & .show-more-button {
+      margin-top: -20px;
+      margin-left: -5px;
+    }
+  }
+
+  & .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & .error-message {
+      margin: 20px;
+      font-weight: bolder;
+    }
+  }
+}
+
+
+
+
